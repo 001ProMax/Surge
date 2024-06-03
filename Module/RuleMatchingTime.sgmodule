@@ -7,7 +7,7 @@
 #!author=001,mieq
 
 [Script]
-ruleMatchingTime = type=cron,cronexp="{{{cronExp}}}",script-path=https://raw.githubusercontent.com/001ProMax/Surge/main/RuleMatchingTime.js,argument={{{DecimalPlaces}}}
+ruleMatchingTime = type=cron,cronexp="{{{cronExp}}}",script-path=https://raw.githubusercontent.com/001ProMax/Surge/main/Script/RuleMatchingTime.js,argument={{{DecimalPlaces}}}
 
 [Panel]
 ruleMatchingTime = script-name=ruleMatchingTime,update-interval={{{updateInterval}}}
