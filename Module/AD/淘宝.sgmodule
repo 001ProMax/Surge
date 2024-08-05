@@ -1,0 +1,8 @@
+#!name=AD：淘宝
+#!desc=AD
+#!category=AD
+#!author=001
+
+[Rule]
+// 需配合使用本项目中的规则集
+DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT-DROP,extended-matching
