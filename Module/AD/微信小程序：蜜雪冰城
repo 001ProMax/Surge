@@ -1,0 +1,10 @@
+#!name=AD：微信小程序：蜜雪冰城
+#!desc=AD
+#!category=AD
+#!author=001
+
+[Map Local]
+^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/adplace\/query data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = %APPEND% mxsa.mxbc.net
