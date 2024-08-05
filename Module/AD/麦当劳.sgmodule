@@ -1,6 +1,7 @@
 #!name=AD：麦当劳
 #!desc=AD
 #!category=AD
+#!author=001
 
 [Rule]
 URL-REGEX,^https:\/\/api\.mcd\.cn\/bff\/portal,REJECT-DROP
