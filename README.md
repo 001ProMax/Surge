@@ -9,9 +9,11 @@
 ---
 
 ## 安装方法（二选一）
+1.通用规则
    - 使用模块：[APP.sgmodule](https://raw.githubusercontent.com/001ProMax/Surge/main/Module/AD/APP.sgmodule)
    - 规则链接：[AD.list](https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/AD.list)
-
+2.单独APP
+   - 自行探索：[Module](https://github.com/001ProMax/Surge/main/Module/AD)
 ---
 
 ## 鸣谢
