@@ -1,0 +1,7 @@
+#!name=AD：APP
+#!desc=Rule
+#!category=AD
+#!author=001
+
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/AD.list,REJECT-DROP
