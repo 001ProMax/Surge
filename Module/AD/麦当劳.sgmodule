@@ -1,0 +1,9 @@
+#!name=AD：麦当劳
+#!desc=AD
+#!category=AD
+
+[Rule]
+URL-REGEX,^https:\/\/api\.mcd\.cn\/bff\/portal,REJECT-DROP
+
+[MITM]
+hostname = %APPEND% api.mcd.cn
