@@ -33,6 +33,6 @@
 
 ## 鸣谢（排名不分先后）
 
-- [@RuCu6](https://github.com/YikR/QuanX)
+- [@RuCu6](https://github.com/RuCu6/QuanX)
 - [@Keywos](https://github.com/Keywos/rule)
 - [@ScriptHub](https://github.com/Script-Hub-Org/Script-Hub)
