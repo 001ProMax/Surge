@@ -7,7 +7,7 @@
 
 由于本项目仅适用于 Surge 用户，其他软件用户请使用 [Script-Hub](https://github.com/Script-Hub-Org/Script-Hub) 进行规则转换。
 
-若您喜欢本项目，请给个 🌟。
+若喜欢本项目请给个 🌟🌟。
 
 ---
 
