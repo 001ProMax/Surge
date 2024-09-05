@@ -7,7 +7,7 @@
 
 由于本项目仅适用于 Surge 用户，使用其他软件的用户请使用 [Script-Hub](https://github.com/Script-Hub-Org/Script-Hub) 进行规则转换。
 
-若喜欢本项目请给个 🌟🌟。
+若喜欢本项目请点下 🌟🌟。
 
 ---
 
@@ -24,10 +24,21 @@
 
 ---
 
-## 工具
+## Surge工具
 
 **安装方法：**
 - 自行探索：[工具合集](https://github.com/001ProMax/Surge/tree/main/Module/Tools)
+
+---
+
+## Surge开发工具
+- 安装教程：
+  1. 安装该sh文件，[安装链接](https://raw.githubusercontent.com/001ProMax/Surge/main/Surge.sh)
+  2. 在Code Runner插件code-runner.executorMapByFileExtension中添加：
+      "code-runner.executorMapByFileExtension": {
+        "javascript": "'Path/To/Surge.sh'",
+      }
+
 
 ---
 
