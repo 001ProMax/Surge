@@ -33,7 +33,7 @@
 
 ## Surge开发工具
 使用教程：
-1. 在 Code Runner 插件的 `code-runner.executorMapByFileExtension` 中添加以下配置：
+1. 在 Code Runner 插件的 `code-runner.executorMap` 中添加以下配置：
 
     ```json
     "code-runner.executorMapByFileExtension": {
