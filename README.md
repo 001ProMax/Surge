@@ -45,7 +45,7 @@
 ---
 
 ## 鸣谢（排名不分先后）
-
+- [@mieqq](https://github.com/mieqq/mieqq)
 - [@RuCu6](https://github.com/RuCu6/QuanX)
 - [@Keywos](https://github.com/Keywos/rule)
 - [@ScriptHub](https://github.com/Script-Hub-Org/Script-Hub)
