@@ -37,7 +37,7 @@
 
     ```json
     "code-runner.executorMapByFileExtension": {
-      "javascript": "zsh -c '[[ \"$1\" =~ ^\"Your/Surge/Script/Path\" ]] && /Applications/Surge.app/Contents/Applications/surge-cli script evaluate \"$1\" cron 30 || node \"$1\"' _ $filePath"
+      "javascript": "zsh -c '[[ \"$1\" =~ ^\"Path/To/Your/Surge/Scripts\" ]] && /Applications/Surge.app/Contents/Applications/surge-cli script evaluate \"$1\" cron 30 || node \"$1\"' _ $filePath"
     }
     ```
 2. Run Code
