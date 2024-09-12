@@ -32,13 +32,15 @@
 ---
 
 ## Surge开发工具
-- 安装教程：
-  1. 安装该sh文件，[安装链接](https://raw.githubusercontent.com/001ProMax/Surge/main/Surge.sh)
-  2. 在Code Runner插件code-runner.executorMapByFileExtension中添加：
-      "code-runner.executorMapByFileExtension": {
-        "javascript": "'Path/To/Surge.sh'",
-      }
+使用教程：
+1. 在 Code Runner 插件的 `code-runner.executorMapByFileExtension` 中添加以下配置：
 
+    ```json
+    "code-runner.executorMapByFileExtension": {
+      "javascript": "zsh -c '[[ \"$1\" =~ ^\"Your/Surge/Script/Path\" ]] && /Applications/Surge.app/Contents/Applications/surge-cli script evaluate \"$1\" cron 30 || node \"$1\"' _ $filePath"
+    }
+    ```
+2. Run Code
 
 ---
 
