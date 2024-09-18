@@ -1,5 +1,5 @@
 # Apple Push
-IP-CIDR,17.57.144.0/22
+IP-CIDR,17.0.0.0/8
 
 # LAN
 IP-CIDR,192.168.0.0/16
