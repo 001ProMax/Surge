@@ -1,7 +1,7 @@
 #!name=流量信息：电信
 #!desc=Panel
 #!category=Tool
-#!argument=LoginURL:null
+#!arguments=LoginURL:null
 #!arguments-desc=LoginURL: 电信登录链接
 
 [Panel]
