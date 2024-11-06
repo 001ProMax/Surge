@@ -46,7 +46,9 @@
 
 ## Surge快捷指令
 
-⚠️ 注意：由于快捷指令依赖需要用到Surge的HTTP API功能，因此仅适用于 Surge 用户。点击安装[依赖](https://www.icloud.com/shortcuts/c7a01fa868be477ca44e653b717c247e)
+⚠️ 注意：由于快捷指令依赖需要用到Surge的HTTP API功能，因此仅适用于 Surge 用户。
+
+点击安装[依赖](https://www.icloud.com/shortcuts/c7a01fa868be477ca44e653b717c247e)
 
 1. [最近请求匹配时间](https://www.icloud.com/shortcuts/63ce770034b54f3097ffe52911fd534f)
 2. [统计规则数量](https://www.icloud.com/shortcuts/1f969963dedd478db7b149d6b50cdc28)
