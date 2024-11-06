@@ -52,6 +52,7 @@
 
 1. [最近请求匹配时间](https://www.icloud.com/shortcuts/63ce770034b54f3097ffe52911fd534f)
 2. [统计规则数量](https://www.icloud.com/shortcuts/1f969963dedd478db7b149d6b50cdc28)
+3. [开关抓包](https://www.icloud.com/shortcuts/050d7cb221794ac4a79c83edbd258348)
 
 ---
 
