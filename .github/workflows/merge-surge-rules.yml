@@ -1,5 +1,4 @@
 name: Merge Surge Rules
-
 on:
   schedule:
     - cron: '39 2 * * *'
@@ -8,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -30,14 +28,21 @@ jobs:
         # 拼接文件，Direct.list 在上，Geo_AS_IP_CN 在下
         cat direct.list geo_as_ip_cn_processed.txt > merged_rules.txt
 
-    - name: Commit and Push
+    - name: Commit and Push to /Ruleset/CN.txt
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
-        # 提交修改后的规则文件
-        mv merged_rules.txt surge_rules.txt
+        # 确保 Ruleset 目录存在
+        mkdir -p Ruleset
+        # 移动文件到 /Ruleset/CN.txt
+        mv merged_rules.txt Ruleset/CN.txt
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # 确保规则文件被正确添加到 git 暂存区
         git add Ruleset/CN.txt
+        git status # 显示当前 git 状态，确认文件已被添加
+
+        # 提交并推送
         git commit -m "Update surge rules in /Ruleset/CN.txt"
         git push
