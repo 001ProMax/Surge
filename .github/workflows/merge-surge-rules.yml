@@ -11,9 +11,6 @@ jobs:
     - uses: actions/checkout@v3
 
     - run: |
-        # 清理工作区中的所有未跟踪文件（保留下载的文件）
-        git clean -fdx
-
         # 下载和处理文件
         curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN.txt
         curl -o direct.list https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
@@ -29,7 +26,7 @@ jobs:
         
         # 只添加 CN.txt 文件
         git add Ruleset/CN.txt
-        git commit -m "Update surge rules"
+        git commit -m "Update surge rules" || echo "No changes to commit"
         git push
 
         # 删除不需要的临时文件
