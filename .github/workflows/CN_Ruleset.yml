@@ -1,4 +1,4 @@
-name: CN Ruleset
+name: Generate CN Ruleset
 on:
   schedule:
     - cron: '42 2 * * *'
