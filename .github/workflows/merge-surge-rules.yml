@@ -24,9 +24,13 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # 只添加 CN.txt 文件
-        git add Ruleset/CN.txt
+        # 确保添加所需的文件
+        git add Ruleset/CN.txt direct.list geo_as_ip_cn.txt geo_as_ip_cn_processed.txt
+        
+        # 提交变更（如果有变更）
         git commit -m "Update surge rules" || echo "No changes to commit"
+        
+        # 推送变更
         git push
 
         # 删除不需要的临时文件
