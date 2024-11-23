@@ -1,4 +1,4 @@
-name: Merge Surge Rules
+name: CN Ruleset
 on:
   schedule:
     - cron: '42 2 * * *'
