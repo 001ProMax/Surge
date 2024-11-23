@@ -8,41 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: Fetch Remote Files
-      run: |
-        # 下载 Geo_AS_IP_CN 规则集
-        curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/refs/heads/main/Geo_AS_IP_CN.txt
-        # 下载 Direct.list 文件
+    - run: |
+        curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN.txt
         curl -o direct.list https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
-
-    - name: Process Geo_AS_IP_CN Rules
-      run: |
-        # 在每行 IP 前面加上 IP-CIDR,
-        sed -e 's/^/IP-CIDR,/' geo_as_ip_cn.txt > geo_as_ip_cn_processed.txt
-
-    - name: Merge Rules
-      run: |
-        # 拼接文件，Direct.list 在上，Geo_AS_IP_CN 在下
-        cat direct.list geo_as_ip_cn_processed.txt > merged_rules.txt
-
-    - name: Commit and Push to /Ruleset/CN.txt
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        # 确保 Ruleset 目录存在
-        mkdir -p Ruleset
-        # 移动文件到 /Ruleset/CN.txt
-        mv merged_rules.txt Ruleset/CN.txt
+        sed 's/^/IP-CIDR,/' geo_as_ip_cn.txt > geo_as_ip_cn_processed.txt
+        cat direct.list geo_as_ip_cn_processed.txt > Ruleset/CN.txt
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        
-        # 确保规则文件被正确添加到 git 暂存区
         git add Ruleset/CN.txt
-        git status # 显示当前 git 状态，确认文件已被添加
-
-        # 提交并推送
-        git commit -m "Update surge rules in /Ruleset/CN.txt"
+        git commit -m "Update surge rules"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
