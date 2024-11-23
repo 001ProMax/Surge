@@ -2,7 +2,8 @@ name: Merge Surge Rules
 
 on:
   schedule:
-    - cron: '39 2 * * *' # 每天的 02:39 自动运行
+    - cron: '39 2 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
