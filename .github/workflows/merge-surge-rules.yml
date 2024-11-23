@@ -14,11 +14,13 @@ jobs:
         curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN.txt
         curl -o direct.list https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
         sed 's/^/IP-CIDR,/' geo_as_ip_cn.txt > geo_as_ip_cn_processed.txt
+        mkdir -p Ruleset
         cat direct.list geo_as_ip_cn_processed.txt > Ruleset/CN.txt
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add Ruleset/CN.txt
         git commit -m "Update surge rules"
         git push
+        rm -f geo_as_ip_cn.txt geo_as_ip_cn_processed.txt direct.list
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
