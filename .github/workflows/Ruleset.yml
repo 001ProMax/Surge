@@ -1,0 +1,42 @@
+name: Merge Surge Rules
+
+on:
+  schedule:
+    - cron: '39 2 * * *' # 每天的 02:39 自动运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Fetch Remote Files
+      run: |
+        # 下载 Geo_AS_IP_CN 规则集
+        curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/refs/heads/main/Geo_AS_IP_CN.txt
+        # 下载 Direct.list 文件
+        curl -o direct.list http://script.hub/file/_start_/https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
+
+    - name: Process Geo_AS_IP_CN Rules
+      run: |
+        # 在每行 IP 前面加上 IP-CIDR,
+        sed -e 's/^/IP-CIDR,/' geo_as_ip_cn.txt > geo_as_ip_cn_processed.txt
+
+    - name: Merge Rules
+      run: |
+        # 拼接文件，Direct.list 在上，Geo_AS_IP_CN 在下
+        cat direct.list geo_as_ip_cn_processed.txt > merged_rules.txt
+
+    - name: Commit and Push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # 提交修改后的规则文件
+        mv merged_rules.txt surge_rules.txt
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add surge_rules.txt
+        git commit -m "Update surge rules"
+        git push
