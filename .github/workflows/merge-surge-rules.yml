@@ -16,11 +16,16 @@ jobs:
         sed 's/^/IP-CIDR,/' geo_as_ip_cn.txt > geo_as_ip_cn_processed.txt
         mkdir -p Ruleset
         cat direct.list geo_as_ip_cn_processed.txt > Ruleset/CN.txt
+        
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # 只提交 CN.txt 文件
         git add Ruleset/CN.txt
         git commit -m "Update surge rules"
         git push
+
+        # 删除临时文件
         rm -f geo_as_ip_cn.txt geo_as_ip_cn_processed.txt direct.list
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
