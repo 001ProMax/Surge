@@ -30,7 +30,7 @@ jobs:
 
     - name: Commit and Push to /Ruleset/CN.txt
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # 确保 Ruleset 目录存在
         mkdir -p Ruleset
