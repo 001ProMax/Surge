@@ -18,7 +18,7 @@ jobs:
         # 下载 Geo_AS_IP_CN 规则集
         curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/refs/heads/main/Geo_AS_IP_CN.txt
         # 下载 Direct.list 文件
-        curl -o direct.list http://script.hub/file/_start_/https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
+        curl -o direct.list https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
 
     - name: Process Geo_AS_IP_CN Rules
       run: |
