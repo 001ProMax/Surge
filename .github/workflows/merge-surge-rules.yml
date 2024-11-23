@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - run: |
-        # 下载和处理文件
+        # 下载并处理文件
         curl -o geo_as_ip_cn.txt https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN.txt
         curl -o direct.list https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/Direct.list
         sed 's/^/IP-CIDR,/' geo_as_ip_cn.txt > geo_as_ip_cn_processed.txt
@@ -24,16 +24,14 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # 确保添加所需的文件
-        git add Ruleset/CN.txt direct.list geo_as_ip_cn.txt geo_as_ip_cn_processed.txt
+        # 只添加 Ruleset/CN.txt 文件
+        git add Ruleset/CN.txt
         
-        # 提交变更（如果有变更）
+        # 提交并推送更改
         git commit -m "Update surge rules" || echo "No changes to commit"
-        
-        # 推送变更
         git push
 
-        # 删除不需要的临时文件
+        # 删除临时文件
         rm -f geo_as_ip_cn.txt geo_as_ip_cn_processed.txt direct.list
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
