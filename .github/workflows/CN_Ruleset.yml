@@ -15,8 +15,6 @@ jobs:
           cat direct.list geo_as_ip_cn.txt > Ruleset/CN.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull
           git add Ruleset/CN.txt
-          git diff-index --quiet HEAD || echo "changes"
-          git commit -m "Update CN.txt"
+          git diff-index --quiet HEAD || git commit -m "Update CN.txt"
           git push
