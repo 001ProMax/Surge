@@ -20,7 +20,7 @@ jobs:
     - name: Process file
       run: |
         # 替换 category 为 Tool
-        sed -i 's/#!category=.*/#!category=Tool/' Module/Tool/iRingo.Maps.sgmodule
+        sed -i 's/#!category=.+/#!category=Tool/' Module/Tool/iRingo.Maps.sgmodule
         # 删除 [Rule] 部分
         sed -i '/\[Rule\]/,/^$/d' Module/Tool/iRingo.Maps.sgmodule
 
