@@ -1,0 +1,12 @@
+# Apple
+IP-CIDR,17.0.0.0/8
+
+# LAN
+IP-CIDR,10.0.0.0/8
+IP-CIDR,172.16.0.0/12
+IP-CIDR,192.168.0.0/16
+
+# Test
+IP-ASN,16509,no-resolve
+DOMAIN-SUFFIX,pubg-ns-gate.com
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP))
