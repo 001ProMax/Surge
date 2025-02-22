@@ -1,0 +1,24 @@
+{
+    "maps": {
+        "url": "https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.sgmodule",
+        "modifications": {
+            "name": " Maps",
+            "del": ["Rule"]
+        }
+    },
+    "weather": {
+        "url": "https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.sgmodule",
+        "modifications": {
+            "name": " WeatherKit",
+            "del": ["Rule"]
+        }
+    },
+    "youtube": {
+        "url": "https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule",
+        "modifications": {
+            "name": "YouTube",
+            "desc": "AD",
+            "del": ["Rule"]
+        }
+    }
+}
