@@ -1,0 +1,11 @@
+missav.*##.lg\:block, .lg\:hidden
+missav.*##a[href*="//bit.ly/"]
+missav.*##div[x-init*="#genki-counter'"]
+missav.*##div:has(a[href*='go.myavlive.com'])
+missav.*##[x-show$="video_details'"] > div > ul
+missav.*##div[style*='width: 300px; height: 250px;']
+missav.*##.relative > div[x-init*='campaignId=under_player']
+missav.*##div[x-show^='recommendItems'] ~ div[class]:has(> div > div.mx-auto > div.flex > a[rel^='sponsored'])
+
+missav.*##+js(nowoop, window.open)
+missav.*##+js(nowoop, player.pause)
