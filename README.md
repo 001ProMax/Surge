@@ -11,19 +11,6 @@
 
 ---
 
-## 去广告
-
-**安装方法（二选一）：**
-
-1. **通用规则**：
-   - 模块下载：[APP.sgmodule](https://raw.githubusercontent.com/001ProMax/Surge/main/Module/AD/APP.sgmodule)
-   - 规则链接：[AD.list](https://raw.githubusercontent.com/001ProMax/Surge/main/Ruleset/AD.list)
-
-2. **单独 APP**：
-   - 自行探索：[模块合集](https://github.com/001ProMax/Surge/tree/main/Module/AD)
-
----
-
 ## Surge工具
 
 **安装方法：**
