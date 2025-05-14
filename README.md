@@ -20,7 +20,7 @@
 
 ## Surge脚本开发工具
 使用教程：
-1. 在 Code Runner 插件的 `code-runner.executorMap` 中添加以下配置：
+1. 在 `Code Runner` 插件的 `code-runner.executorMap` 中添加以下配置：
 
     ```json
     "code-runner.executorMapByFileExtension": {
@@ -33,7 +33,7 @@
 
 ## Surge快捷指令
 
-⚠️ 注意：由于快捷指令依赖需要用到Surge的HTTP API功能，因此仅适用于 Surge 用户。
+⚠️ 注意：由于快捷指令依赖需要用到Surge的`HTTP API`功能，因此仅适用于 Surge 用户。
 
 点击安装[依赖](https://www.icloud.com/shortcuts/c7a01fa868be477ca44e653b717c247e)
 
