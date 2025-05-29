@@ -1,0 +1,8 @@
+#!name=Spotify
+#!desc=AD
+
+[Script]
+Spotify.Crack = type=http-response, pattern=^https:\/\/spclient\.wg\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.js, requires-body=true, binary-body-mode=true
+
+[MITM]
+hostname = %INSERT% spclient.wg.spotify.com
