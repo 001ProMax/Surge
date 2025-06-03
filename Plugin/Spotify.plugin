@@ -18,12 +18,12 @@ useractivity=switch, true, tag=启用Apple设备接力, desc=此开关控制是�
 AND, ((DOMAIN-SUFFIX, spotify.com), (PROTOCOL, QUIC)), REJECT
 
 [Rewrite]
-^https:\/\/.+\.spotify\.com(:443)?\/pendragon\/ reject-dict
+^https:\/\/.+\.spotify\.com\/pendragon\/ reject-dict
 
-^https:\/\/.+\.spotify\.com(:443)?\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/(.*)platform=iphone header https://spclient.wg.spotify.com/$1/$2platform=ipad
- 
+^https:\/\/(.+)\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/(.*)platform=iphone header https://$1.spotify.com/$2/$3platform=ipad
+
 [Script]
-http-response ^https:\/\/.+\.spotify\.com(:443)?\/(?:bootstrap|user-customization-service) script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument=[{tab},{useractivity}], tag=Protobuf
+http-response ^https:\/\/.+\.spotify\.com\/(?:bootstrap|user-customization-service) script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument=[{tab},{useractivity}], tag=Protobuf
 
 [MitM]
 hostname=*.spotify.com
