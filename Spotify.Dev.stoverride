@@ -1,0 +1,35 @@
+name: |-
+  Spotify Dev
+desc: |-
+  AD
+icon: |-
+  https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/28/96/ea28963b-0448-9bba-2378-9e33edc11ebd/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.png
+category: |-
+  APP
+
+rules:
+  - AND,((DOMAIN-SUFFIX,spclient.wg.spotify.com),(PROTOCOL,QUIC)),REJECT
+  - AND,((DOMAIN-SUFFIX,gae2-spclient.spotify.com),(PROTOCOL,QUIC)),REJECT
+  - AND,((DOMAIN-SUFFIX,guc3-spclient.spotify.com),(PROTOCOL,QUIC)),REJECT
+
+http:
+  mitm:
+    - "spclient.wg.spotify.com"
+    - "gae2-spclient.spotify.com"
+    - "guc3-spclient.spotify.com"
+  url-rewrite:
+    - ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:ad-|pendragon|social) - reject-200
+    
+  script:
+    - match: ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service)
+      name: "Spotify.AD"
+      type: response
+      require-body: true
+      binary-mode: true
+      argument: |-
+        {"tab":true,"useractivity":true}
+
+script-providers:
+  "Spotify.AD":
+    url: https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js
+    interval: 86400
