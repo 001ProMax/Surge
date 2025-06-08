@@ -27,12 +27,19 @@ http:
     - match: ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service)
       name: "Spotify.AD"
       type: response
+      timeout: 10
       require-body: true
       binary-mode: true
       argument: |-
         {"tab":true,"useractivity":true}
-
+    - match: ^https:\/\/spclient\.wg\.spotify\.com\/(?:artistview\/v1\/artist|album-entity-view\/v2\/album)\/
+      name: "Spotify.ArtistView"
+      type: request
+      timeout: 10
 script-providers:
   "Spotify.AD":
     url: https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js
+    interval: 86400
+  "Spotify.ArtistView":
+    url: https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
     interval: 86400
