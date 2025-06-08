@@ -22,7 +22,6 @@ http:
     - "guc3-spclient.spotify.com"
   url-rewrite:
     - ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:ad-|pendragon|social) - reject-200
-    
   script:
     - match: ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service)
       name: "Spotify.AD"
