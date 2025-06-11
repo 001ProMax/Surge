@@ -1,7 +1,8 @@
 name: |-
   Spotify
 desc: |-
-  去广告
+  移除播放广告，恢复歌手列表的正常展示
+  首次使用或修改参数需重新登录以生效
 author: |-
   app2smile
   001
