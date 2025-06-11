@@ -1,5 +1,5 @@
 #!name=Spotify
-#!desc=AD
+#!desc=AD/n首次使用或修改参数需重新登录以生效
 #!author=app2smile, 001
 #!arguments=精简底栏:"true",接力功能:"true"
 
