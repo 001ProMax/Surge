@@ -14,7 +14,7 @@
 ## Surge工具
 
 **安装方法：**
-- 自行探索：[工具合集](https://github.com/001ProMax/Surge/tree/main/Module/Tools)
+- 自行探索：[工具合集](https://github.com/001ProMax/Surge/tree/main/Module/Tool)
 
 ---
 
