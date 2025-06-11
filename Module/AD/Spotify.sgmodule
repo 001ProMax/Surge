@@ -10,7 +10,7 @@
 ^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:ad-|pendragon) data-type=text data="" status-code=200
 
 [Script]
-Spotify.Crack = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.js, requires-body=true, binary-body-mode=true, argument="{"tab":{{{精简底栏}}},"useractivity":{{{接力功能}}}}"
+Spotify.Crack = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, argument="{"tab":{{{精简底栏}}},"useractivity":{{{接力功能}}}}"
 
 [MITM]
 hostname = %INSERT% gae2-spclient.spotify.com, guc3-spclient.spotify.com, spclient.wg.spotify.com
