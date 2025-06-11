@@ -1,6 +1,6 @@
 #!name=Spotify
 #!desc=AD
-#!desc=app2smile, 001
+#!author=app2smile, 001
 
 [URL Rewrite]
 ^https?:\/\/(gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad
