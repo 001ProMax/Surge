@@ -1,5 +1,3 @@
-# Surge
-
 ## 项目目标：
 
 1. **[去广告](https://github.com/001ProMax/Surge/tree/main/Module/AD)**：通过简洁方式去除应用中的广告干扰（如开屏弹窗、横幅等）。
