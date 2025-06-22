@@ -22,18 +22,6 @@ http:
     - "gae2-spclient.spotify.com"
     - "guc3-spclient.spotify.com"
   url-rewrite:
-    - ^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ - reject-200
-    - ^https?:\/\/(gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad transparent
-  script:
-    - match: ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service)
-      name: "Spotify.AD"
-      type: response
-      timeout: 3
-      require-body: true
-      binary-mode: true
-      argument: |-
-        {"tab":true,"useractivity":true}
-script-providers:
-  "Spotify.AD":
-    url: https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js
-    interval: 86400
+    - ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ - reject-200
+    - ^https:\/\/(gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad transparent
+    - ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ https://cf3f20c9-tjprs2yvebyydhw.trigram-masques-8r.workers.dev/$1?tab=true&useractivity=true transparent
