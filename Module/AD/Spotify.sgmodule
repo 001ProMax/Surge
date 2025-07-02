@@ -1,5 +1,6 @@
 #!name=Spotify
-#!desc=移除播放广告，恢复歌手列表的正常展示\n首次使用或修改参数需重新登录以生效
+#!desc=AD
+#!category=APP
 #!author=app2smile, 001
 #!arguments=精简底栏:"true",接力功能:"true"
 
