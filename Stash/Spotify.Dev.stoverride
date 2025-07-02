@@ -11,11 +11,6 @@ icon: |-
 category: |-
   APP
 
-rules:
-  - AND,((DOMAIN-SUFFIX,spclient.wg.spotify.com),(PROTOCOL,QUIC)),REJECT
-  - AND,((DOMAIN-SUFFIX,gae2-spclient.spotify.com),(PROTOCOL,QUIC)),REJECT
-  - AND,((DOMAIN-SUFFIX,guc3-spclient.spotify.com),(PROTOCOL,QUIC)),REJECT
-
 http:
   mitm:
     - "spclient.wg.spotify.com"
