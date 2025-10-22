@@ -8,12 +8,11 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
-#!date=2025-06-11 00:00:00
+#!date=2025-10-22 00:00:00
 
 [Rewrite]
-^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com\/pendragon\/ reject-dict
-^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com\/artistview\/v1\/artist\/(.*)&platform=iphone header https://spclient.wg.spotify.com/artistview/v1/artist/$2&platform=ipad
-^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize) https://surge.trigram-masques-8r.workers.dev/$1 header
+^https?:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com\/pendragon\/ reject-dict
+^https:\/\/(?:spclient\.wg|[a-z0-9]+-spclient)\.spotify\.com(?::443)?\/(artistview|user-customization-service|bootstrap) https://surge.trigram-masques-8r.workers.dev/$1 header
 
 [MitM]
-hostname = *-spclient.spotify.com, spclient.wg.spotify.com
+hostname = spclient.wg.spotify.com, *-spclient.spotify.com
