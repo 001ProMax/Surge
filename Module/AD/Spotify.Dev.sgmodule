@@ -7,7 +7,7 @@
 # 移除追踪
 ^https:\/\/(?:spclient\.wg|[a-z0-9]+-spclient)\.spotify\.com(?::443)?\/(?:ad-|gabo|pendragon|social) - reject
 # 移除广告
-^https:\/\/(?:spclient\.wg|[a-z0-9]+-spclient)\.spotify\.com(?::443)?\/(user-customization-service|bootstrap) {{{Mock}}}/$1
+^https:\/\/(?:spclient\.wg|[a-z0-9]+-spclient)\.spotify\.com(?::443)?\/(user-customization-service|bootstrap) {{{Mock}}}/$1 header
 
 [MITM]
 hostname = %INSERT% spclient.wg.spotify.com, g*-spclient.spotify.com
