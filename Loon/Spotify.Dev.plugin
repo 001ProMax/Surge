@@ -12,7 +12,7 @@
 
 [Rewrite]
 ^https?:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com\/pendragon\/ reject-dict
-^https:\/\/(?:spclient\.wg|[a-z0-9]+-spclient)\.spotify\.com(?::443)?\/(artistview|user-customization-service|bootstrap) https://surge.trigram-masques-8r.workers.dev/$1 header
+^https:\/\/(?:spclient\.wg|[a-z0-9]+-spclient)\.spotify\.com(?::443)?\/(artistview|user-customization-service|bootstrap) https://mock.trigram-masques-8r.workers.dev/music/$1 header
 
 [MitM]
 hostname = spclient.wg.spotify.com, *-spclient.spotify.com
