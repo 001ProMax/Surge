@@ -47,10 +47,14 @@ class APP {
       )
     );
 
+    const { data, errors } = JSON.parse(r);
+
+    if (errors) throw errors[0]?.message || "Unknown error";
+
     const {
       pagesFunctionsInvocationsAdaptiveGroups,
       workersInvocationsAdaptive,
-    } = JSON.parse(r)?.data?.viewer?.accounts?.[0];
+    } = data?.viewer?.accounts?.[0];
 
     // Add Pages
     const pagesArray = pagesFunctionsInvocationsAdaptiveGroups;
@@ -79,5 +83,5 @@ const result = {
 Pages: ${pages}
 Remaining: ${Number(total) - workers - pages}`;
 })()
-  .catch((e) => (result.content = e.message))
+  .catch((e) => (result.content = e))
   .finally(() => $done(result));
