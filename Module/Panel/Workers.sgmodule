@@ -1,0 +1,11 @@
+#!name=Workers
+#!desc=Panel
+#!category=Tool
+#!arguments=ID:"",Token:"",Limit:"100000"
+#!arguments-desc=https://developers.cloudflare.com/analytics/graphql-api/getting-started/authentication/api-token-auth
+
+[Script]
+Workers = type=generic, script-path=https://raw.githubusercontent.com/001ProMax/Surge/main/Script/Workers.Panel.js, argument="{{{ID}}},{{{Token}}},{{{Limit}}}"
+
+[Panel]
+Workers = script-name=Workers, update-interval=1
