@@ -15,5 +15,5 @@ http:
     - "spclient.wg.spotify.com"
     - "*-spclient.spotify.com"
   url-rewrite:
-    - ^https:\/\/(?:[a-z0-9]+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:ads?\/|ad-|capping-api\/|gabo-receiver-service\/|net-fortune\/|pendragon\/) - reject-200
-    - ^https:\/\/((?:[a-z0-9]+-spclient|spclient\.wg)\.spotify\.com)(?::443)?\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize|nebula\/v1\/configuration\/attributes|remote-config-resolver\/v3\/configuration|browsita\/v1\/browse|casita\/v1\/(?:feeds|home\/default)|scrollsita\/v1\/scroll\/spotify)(?:$|\?) https://mock.trigram-masques-8r.workers.dev/$1/$2? transparent
+    - ^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:ads?\/|ad-|capping-api\/|gabo-receiver-service\/|net-fortune\/|pendragon\/) - reject-200
+    - ^https:\/\/((?:\w+-spclient|spclient\.wg)\.spotify\.com)(?::443)?\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize|nebula\/v1\/configuration\/attributes|remote-config-resolver\/v3\/configuration|browsita\/v1\/browse|casita\/v1\/(?:feeds|home\/default)|scrollsita\/v1\/scroll\/spotify:track:\w+)(?:$|\?) https://mock.trigram-masques-8r.workers.dev/$1/$2? transparent
